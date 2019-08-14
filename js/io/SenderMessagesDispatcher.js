@@ -15,13 +15,14 @@ function SenderMessagesDispatcher(communicationConstants, callbacks) {
             
         else if(message.data.command === communicationConstants.LOAD)
             callbacks.loadVideo(message.data.videoId, Number(message.data.startSeconds))
+        else if(message.data.command === communicationConstants.LOAD_VIDEOS)
+            callbacks.loadVideos(message.data.playlist, Number(message.data.index), Number(message.data.startSeconds), message.data.suggestedQuality)
         else if(message.data.command === communicationConstants.CUE)
             callbacks.cueVideo(message.data.videoId, Number(message.data.startSeconds))
         else if(message.data.command === communicationConstants.PLAY)
             callbacks.playVideo()
         else if(message.data.command === communicationConstants.PAUSE)
             callbacks.pauseVideo()
-        
         else if(message.data.command === communicationConstants.MUTE)
             callbacks.mute()
         else if(message.data.command === communicationConstants.UNMUTE)

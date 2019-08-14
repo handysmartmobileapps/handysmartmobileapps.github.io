@@ -114,6 +114,13 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
         YouTubePlayerBridge.sendVideoId(videoId)
     }
 
+    function loadVideos(videoIds, startIdx, startSeconds, quality) {
+        lastVideoId = videoIds[0]
+
+        player.loadVideos(videoIds, startIdx, startSeconds, quality)
+        YouTubePlayerBridge.sendVideoId(lastVideoId)
+    }
+
     function cueVideo(videoId, startSeconds) {
         lastVideoId = videoId
 
@@ -137,7 +144,7 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
         return actions
     }
 
-    const actions = { seekTo, pauseVideo, playVideo, loadVideo, cueVideo, mute, unMute, setVolume }
+    const actions = { seekTo, pauseVideo, playVideo, loadVideo, loadVideos, cueVideo, mute, unMute, setVolume }
     
     return {
         initialize,
