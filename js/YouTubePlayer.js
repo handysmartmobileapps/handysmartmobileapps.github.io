@@ -31,7 +31,7 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
                 onApiChange: () => YouTubePlayerBridge.sendApiChange()
             },
             playerVars: {
-                autoplay: 0,
+                autoplay: 1,
                 autohide: 1,
                 controls: 0,
                 enablejsapi: 1,
@@ -120,6 +120,14 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
         YouTubePlayerBridge.sendVideoId(lastVideoId)
     }
 
+    function nextVideo() {
+        player.nextVideo()
+    }
+
+    function previousVideo() {
+        player.nextVideo()
+    }
+
     function cueVideo(videoId, startSeconds) {
         lastVideoId = videoId
 
@@ -143,7 +151,7 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
         return actions
     }
 
-    const actions = { seekTo, pauseVideo, playVideo, loadVideo, loadVideos, cueVideo, mute, unMute, setVolume }
+    const actions = { seekTo, pauseVideo, playVideo, loadVideo, loadVideos, cueVideo, mute, unMute, setVolume, nextVideo, previousVideo }
     
     return {
         initialize,
