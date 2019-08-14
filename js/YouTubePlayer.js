@@ -124,6 +124,7 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
 
     function loadVideos(videoIds, startIdx, startSeconds, quality) {
         lastVideoId = videoIds[0]
+        console.log(videoIds)
         player.loadPlaylist(videoIds, startIdx, startSeconds, quality)
         YouTubePlayerBridge.sendVideoId(lastVideoId)
     }
