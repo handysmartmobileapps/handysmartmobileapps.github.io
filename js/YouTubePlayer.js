@@ -107,6 +107,14 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
         player.playVideo()
     }
 
+    function nextVideo() {
+        player.nextVideo()
+    }
+
+    function previoustVideo() {
+        player.previousVideo()
+    }
+
     function loadVideo(videoId, startSeconds) {
         lastVideoId = videoId
 
