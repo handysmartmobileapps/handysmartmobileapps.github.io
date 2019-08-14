@@ -129,6 +129,7 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
     }
 
     function nextVideo() {
+        print(player.getPlaylist())
         player.nextVideo()
     }
 
