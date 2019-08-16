@@ -107,6 +107,10 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
         player.playVideo()
     }
 
+    function playVideoAt(index) {
+        player.playVideoAt(index)
+    }
+
     function nextVideo() {
         player.nextVideo()
     }
@@ -117,20 +121,17 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
 
     function loadVideo(videoId, startSeconds) {
         lastVideoId = videoId
-
         player.loadVideoById(videoId, startSeconds)
         YouTubePlayerBridge.sendVideoId(videoId)
     }
 
     function loadVideos(videoIds, startIdx, startSeconds, quality) {
         lastVideoId = videoIds[0]
-        console.log(videoIds)
         player.loadPlaylist(videoIds, startIdx, startSeconds, quality)
         YouTubePlayerBridge.sendVideoId(lastVideoId)
     }
 
     function nextVideo() {
-        console.log(player.getPlaylist())
         player.nextVideo()
     }
 
@@ -161,7 +162,7 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
         return actions
     }
 
-    const actions = { seekTo, pauseVideo, playVideo, loadVideo, loadVideos, cueVideo, mute, unMute, setVolume, nextVideo, previousVideo }
+    const actions = { seekTo, pauseVideo, playVideo, playVideoAt, loadVideo, loadVideos, cueVideo, mute, unMute, setVolume, nextVideo, previousVideo }
     
     return {
         initialize,
