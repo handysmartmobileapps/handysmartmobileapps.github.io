@@ -147,6 +147,7 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
     }
 
     function playlistInfo() {
+        console.log(player.getPlaylistIndex())
         YouTubePlayerBridge.sendPlaylistInfo(player.getPlaylistIndex())
     }
 
