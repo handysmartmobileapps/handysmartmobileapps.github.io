@@ -146,6 +146,10 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
         YouTubePlayerBridge.sendVideoId(videoId)
     }
 
+    function playlistInfo() {
+        YouTubePlayerBridge.sendPlaylistInfo(player.getPlaylistIndex())
+    }
+
     function mute() {
         player.mute()
     }
@@ -162,7 +166,7 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
         return actions
     }
 
-    const actions = { seekTo, pauseVideo, playVideo, playVideoAt, loadVideo, loadVideos, cueVideo, mute, unMute, setVolume, nextVideo, previousVideo }
+    const actions = { seekTo, pauseVideo, playVideo, playVideoAt, loadVideo, loadVideos, cueVideo, mute, unMute, setVolume, nextVideo, previousVideo, playlistInfo}
     
     return {
         initialize,

@@ -31,6 +31,10 @@ function YouTubePlayerRemoteBridge(communicationConstants, communicationChannel)
         communicationChannel.sendMessage(new YouTubeMessage(communicationConstants.ERROR, data))
     }
 
+    function sendPlaylistInfo(data) {
+        communicationChannel.sendMessage(new YouTubeMessage(communicationConstants.PLAYLIST_INFO, data))
+    }
+
     function sendApiChange() {
         communicationChannel.sendMessage(new YouTubeMessage(communicationConstants.API_CHANGED))
     }
@@ -58,6 +62,7 @@ function YouTubePlayerRemoteBridge(communicationConstants, communicationChannel)
         sendVideoCurrentTime: sendVideoCurrentTime,
         sendVideoDuration: sendVideoDuration,
         sendVideoId: sendVideoId,
+        sendPlaylistInfo: sendPlaylistInfo
     }
 }
 

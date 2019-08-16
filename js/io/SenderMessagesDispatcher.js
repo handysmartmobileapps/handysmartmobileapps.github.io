@@ -37,6 +37,8 @@ function SenderMessagesDispatcher(communicationConstants, callbacks) {
             callbacks.setVolume(Number(message.data.volumePercent))
         else if(message.data.command === communicationConstants.SEEK_TO)
             callbacks.seekTo(Number(message.data.time))
+        else if(message.data.command === communicationConstants.PLAYLIST_INFO)
+            callbacks.playlistInfo()
     }
 
     return {
