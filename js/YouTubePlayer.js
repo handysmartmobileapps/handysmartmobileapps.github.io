@@ -136,7 +136,7 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
     }
 
     function previousVideo() {
-        player.nextVideo()
+        player.previousVideo()
     }
 
     function cueVideo(videoId, startSeconds) {
