@@ -89,7 +89,7 @@ function YouTubePlayer(communicationConstants, communicationChannel) {
             var currentVideoUrl = player.getVideoUrl();
             lastVideoId = currentVideoUrl.substring(currentVideoUrl.lastIndexOf('/')+1);
 
-            console.log("VIDEO ID"+lastVideoId);
+            console.info("VIDEO ID"+lastVideoId);
 
             YouTubePlayerBridge.sendVideoId(lastVideoId)
             YouTubePlayerBridge.sendVideoDuration(videoDuration)
